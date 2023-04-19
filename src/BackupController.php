@@ -76,6 +76,60 @@ class BackupController
             ]);
         }
     }
+    
+    /**
+     * Run `backup:run --only-db` command.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function runDB()
+    {
+        try {
+            ini_set('max_execution_time', 300);
+
+            // start the backup process
+            Artisan::call('backup:run --only-db');
+
+            $output = Artisan::output();
+
+            return response()->json([
+                'status'  => true,
+                'message' => $output,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => $e->getMessage(),
+            ]);
+        }
+    }
+    
+    /**
+     * Run `backup:run --only-files` command.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function run()
+    {
+        try {
+            ini_set('max_execution_time', 300);
+
+            // start the backup process
+            Artisan::call('backup:run --only-files');
+
+            $output = Artisan::output();
+
+            return response()->json([
+                'status'  => true,
+                'message' => $output,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'  => false,
+                'message' => $e->getMessage(),
+            ]);
+        }
+    }
 
     /**
      * Delete a backup file.
