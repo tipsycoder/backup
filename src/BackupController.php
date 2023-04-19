@@ -109,7 +109,7 @@ class BackupController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function run()
+    public function runApp()
     {
         try {
             ini_set('max_execution_time', 300);
