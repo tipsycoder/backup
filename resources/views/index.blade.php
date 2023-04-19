@@ -74,21 +74,28 @@ $(function () {
         color: #3c8dbc;
         margin-left: 10px;
     }
+    
+    #backup-btns {
+        display: inline-flex;
+        float: right;
+        gap: 10px;
+    }
 
 </style>
 
 <div class="box">
     <div class="box-header">
         <h3 class="box-title">Existing backups</h3>
-
-        <div class="box-tools">
-            <a href="{{ route('backup-run-db') }}" class="btn btn-dropbox backup-run">Backup DB</a>
-        </div>
-        <div class="box-tools">
-            <a href="{{ route('backup-run-app') }}" class="btn btn-dropbox backup-run">Backup App</a>
-        </div>
-        <div class="box-tools">
-            <a href="{{ route('backup-run') }}" class="btn btn-dropbox backup-run">Backup Both</a>
+        <div id="backup-btns">
+            <div class="box-tools">
+                <a href="{{ route('backup-run-db') }}" class="btn btn-dropbox backup-run">Backup DB</a>
+            </div>
+            <div class="box-tools">
+                <a href="{{ route('backup-run-app') }}" class="btn btn-dropbox backup-run">Backup App</a>
+            </div>
+            <div class="box-tools">
+                <a href="{{ route('backup-run') }}" class="btn btn-dropbox backup-run">Backup Both</a>
+            </div>
         </div>
     </div>
     <!-- /.box-header -->
