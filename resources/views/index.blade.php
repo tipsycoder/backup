@@ -82,7 +82,13 @@ $(function () {
         <h3 class="box-title">Existing backups</h3>
 
         <div class="box-tools">
-            <a href="{{ route('backup-run') }}" class="btn btn-dropbox backup-run">Backup</a>
+            <a href="{{ route('backup-run-db') }}" class="btn btn-dropbox backup-run">Backup DB</a>
+        </div>
+        <div class="box-tools">
+            <a href="{{ route('backup-run-app') }}" class="btn btn-dropbox backup-run">Backup App</a>
+        </div>
+        <div class="box-tools">
+            <a href="{{ route('backup-run') }}" class="btn btn-dropbox backup-run">Backup Both</a>
         </div>
     </div>
     <!-- /.box-header -->
