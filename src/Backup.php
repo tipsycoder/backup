@@ -56,6 +56,8 @@ class Backup extends Extension
             $router->get('backup', 'Encore\Admin\Backup\BackupController@index')->name('backup-list');
             $router->get('backup/download', 'Encore\Admin\Backup\BackupController@download')->name('backup-download');
             $router->post('backup/run', 'Encore\Admin\Backup\BackupController@run')->name('backup-run');
+            $router->post('backup/run/db', 'Encore\Admin\Backup\BackupController@runDB')->name('backup-run-db');
+            $router->post('backup/run/app', 'Encore\Admin\Backup\BackupController@runApp')->name('backup-run-app');
             $router->delete('backup/delete', 'Encore\Admin\Backup\BackupController@delete')->name('backup-delete');
         });
     }
