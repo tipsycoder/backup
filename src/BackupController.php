@@ -43,7 +43,7 @@ class BackupController
 
         $storage = Storage::disk($disk);
 
-        if ($storage->exist($file)) {
+        if ($storage->exists($file)) {
             return $storage->download($file);
         }
 
